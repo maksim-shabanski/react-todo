@@ -1,0 +1,76 @@
+{
+  "name": "react-todo",
+  "version": "0.0.0",
+  "description": "Pet todo application",
+  "author": "Maksim Shabanski",
+  "license": "MIT",
+  "keywords": [
+    "js",
+    "react",
+    "redux",
+    "todo"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maksim-shabanski/todo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maksim-shabanski/todo/issues"
+  },
+  "homepage": "https://github.com/maksim-shabanski/todo#readme",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.dev.js -d --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{scss,css}": [
+      "stylelint --fix",
+      "git add"
+    ],
+    "*.{js,jsx}": [
+      "eslint --debug --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.1",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.0.6",
+    "lint-staged": "^9.5.0",
+    "node-sass": "^4.13.0",
+    "path": "^0.12.7",
+    "prettier": "^1.19.1",
+    "sass-loader": "^8.0.1",
+    "style-loader": "^1.1.2",
+    "stylelint": "^12.0.1",
+    "stylelint-config-hudochenkov": "^3.0.1",
+    "stylelint-config-prettier": "^8.0.0",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-order": "^4.0.0",
+    "stylelint-scss": "^3.13.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  }
+}
