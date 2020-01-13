@@ -30,4 +30,7 @@ module.exports = {
       template: 'public/index.html',
     }),
   ],
+  resolve: {
+    modules: [path.resolve('./src'), 'node_modules'],
+  },
 };
