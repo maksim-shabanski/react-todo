@@ -1,4 +1,4 @@
-import { INITIALIZE_APP } from '../constants/actionType';
+import { INITIALIZE_APP } from 'constants/actionType';
 
 const appInit = (state = false, { type }) => {
   switch (type) {
