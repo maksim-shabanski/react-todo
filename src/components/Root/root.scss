@@ -1,0 +1,14 @@
+:root {
+	--gray: #ccc;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+main {
+	margin: 0 auto;
+	max-width: 450px;
+}
