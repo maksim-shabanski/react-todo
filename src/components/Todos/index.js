@@ -5,7 +5,12 @@ import TodoForm from 'components/TodoForm';
 import TodoItem from 'components/TodoItem';
 import './todos.scss';
 
-const Todos = ({ todos, addTaskToStore, removeTaskFromStore }) => {
+const Todos = ({
+  todos,
+  addTaskToStore,
+  removeTaskFromStore,
+  completeTask,
+}) => {
   const isTodosExist = todos && todos.length > 0;
 
   return (
@@ -21,6 +26,7 @@ const Todos = ({ todos, addTaskToStore, removeTaskFromStore }) => {
               id={id}
               text={text}
               isCompleted={isCompleted}
+              completeTask={completeTask}
               onRemoveTask={removeTaskFromStore}
             />
           ))}
@@ -39,6 +45,7 @@ Todos.propTypes = {
     })
   ).isRequired,
   addTaskToStore: PropTypes.func.isRequired,
+  completeTask: PropTypes.func.isRequired,
   removeTaskFromStore: PropTypes.func.isRequired,
 };
 

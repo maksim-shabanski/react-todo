@@ -1,4 +1,6 @@
 .todo {
+	$block: &;
+
 	display: flex;
 	margin-bottom: 5px;
 	padding: 5px 10px;
@@ -13,5 +15,10 @@
 
 	&__text {
 		flex-grow: 1;
+
+		#{$block}--completed & {
+			color: gray;
+			text-decoration: line-through;
+		}
 	}
 }
