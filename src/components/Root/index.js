@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import Todo from 'components/Todo';
+import TodosContainer from 'containers/TodosContainer';
 import './root.scss';
 
 const Root = ({ onAppInit }) => {
@@ -12,7 +12,7 @@ const Root = ({ onAppInit }) => {
   return (
     <main>
       <h1>Todo list</h1>
-      <Todo />
+      <TodosContainer />
     </main>
   );
 };

@@ -1,7 +1,27 @@
-import { INITIALIZE_APP } from 'constants/actionType';
+import {
+  INITIALIZE_APP,
+  ADD_TASK,
+  REMOVE_TASK,
+  COMPLETE_TASK,
+} from 'constants/actionType';
 
-/* eslint-disable import/prefer-default-export */
 export const initializeApp = () => ({
   type: INITIALIZE_APP,
 });
-/* eslint-enable */
+
+export const addTask = (id, text, isCompleted) => ({
+  type: ADD_TASK,
+  id,
+  text,
+  isCompleted,
+});
+
+export const removeTask = id => ({
+  type: REMOVE_TASK,
+  id,
+});
+
+export const completeTask = id => ({
+  type: COMPLETE_TASK,
+  id,
+});

@@ -1,0 +1,12 @@
+.todos {
+	&__form {
+		display: flex;
+		margin-bottom: 15px;
+
+		input {
+			flex-grow: 1;
+			padding: 5px 10px;
+			height: 30px;
+		}
+	}
+}
