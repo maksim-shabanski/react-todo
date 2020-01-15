@@ -2,12 +2,11 @@
 	$block: &;
 
 	display: flex;
+	align-items: center;
 	margin-bottom: 5px;
 	padding: 5px 10px;
-
-	&:hover {
-		background-color: var(--gray);
-	}
+	border-radius: var(--border-radius-base);
+	background-color: var(--white-color);
 
 	&:last-child {
 		margin-bottom: 0;
@@ -15,10 +14,18 @@
 
 	&__text {
 		flex-grow: 1;
+		padding: 0 5px;
+		font-size: 14px;
 
 		#{$block}--completed & {
-			color: gray;
+			color: var(--gray-color);
 			text-decoration: line-through;
 		}
+	}
+
+	&__close {
+		width: 12px;
+		height: 12px;
+		fill: var(--gray-color);
 	}
 }

@@ -16,8 +16,10 @@ const TodoItem = ({ id, text, isCompleted, completeTask, onRemoveTask }) => {
       </div>
       <div className="todo__text">{text}</div>
       <div className="todo__actions">
-        <Button variant="danger" size="small" onClick={() => onRemoveTask(id)}>
-          Delete
+        <Button onClick={() => onRemoveTask(id)}>
+          <svg className="todo__close" viewBox="0 0 20 20">
+            <polygon points="10 8.58578644 2.92893219 1.51471863 1.51471863 2.92893219 8.58578644 10 1.51471863 17.0710678 2.92893219 18.4852814 10 11.4142136 17.0710678 18.4852814 18.4852814 17.0710678 11.4142136 10 18.4852814 2.92893219 17.0710678 1.51471863 10 8.58578644" />
+          </svg>
         </Button>
       </div>
     </div>
