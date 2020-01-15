@@ -1,11 +1,45 @@
 :root {
-	--gray: #ccc;
+	--border-radius-base: 2px;
+	--white-color: #fff;
+	--black-color: #333;
+	--green-color: #40e583;
+	--green-color-alpha20: #d8f9e5;
+	--blue-color: #2c82e0;
+	--blue-color-alpha20: #d5e6f9;
+	--red-color: #e34b4a;
+	--red-color-alpha20: #f9dbdb;
+	--gray-color: #babfc2;
+	--font-size-base: 16px;
+	--font-size-small: 12px;
+	--font-size-tiny: 10px;
+	--font-family-base:
+		-apple-system,
+		blinkmacsystemfont,
+		"Segoe UI",
+		roboto,
+		oxygen,
+		ubuntu,
+		cantarell,
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		sans-serif;
 }
 
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
+}
+
+html {
+	color: var(--black-color);
+	font-size: var(--font-size-base);
+	font-family: var(--font-family-base);
+}
+
+body {
+	background-color: #ebecf0;
 }
 
 main {
