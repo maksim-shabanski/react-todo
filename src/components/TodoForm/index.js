@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
+import Button from 'components/Button';
+
 const TodoForm = ({ addTaskToStore }) => {
   const [todoText, setTodoText] = useState('');
   const todoInput = useRef();
@@ -30,13 +32,13 @@ const TodoForm = ({ addTaskToStore }) => {
         ref={todoInput}
         type="text"
         value={todoText}
-        placeholder="Todo name..."
+        placeholder="Task name..."
         onChange={handleChangeInput}
         onKeyPress={handleKeyPress}
       />
-      <button type="button" onClick={addTodo}>
-        Add a todo
-      </button>
+      <Button onClick={addTodo} variant="primary-outline">
+        Add task
+      </Button>
     </>
   );
 };

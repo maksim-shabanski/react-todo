@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Button from 'components/Button';
 import './todo.scss';
 
 const TodoItem = ({ id, text, isCompleted, completeTask, onRemoveTask }) => {
@@ -16,9 +17,9 @@ const TodoItem = ({ id, text, isCompleted, completeTask, onRemoveTask }) => {
       </div>
       <div className="todo__text">{text}</div>
       <div className="todo__actions">
-        <button type="button" onClick={() => onRemoveTask(id)}>
+        <Button variant="danger" size="small" onClick={() => onRemoveTask(id)}>
           Delete
-        </button>
+        </Button>
       </div>
     </div>
   );
