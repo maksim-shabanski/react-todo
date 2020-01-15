@@ -2,17 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Button from 'components/Button';
+import CustomCheckbox from 'components/CustomCheckbox';
 import './todo.scss';
 
 const TodoItem = ({ id, text, isCompleted, completeTask, onRemoveTask }) => {
   return (
     <div className={isCompleted ? 'todo todo--completed' : 'todo'}>
       <div className="todo__toggle">
-        <input
-          type="checkbox"
-          value={text}
-          checked={isCompleted}
-          onChange={() => completeTask(id)}
+        <CustomCheckbox
+          isChecked={isCompleted}
+          onClick={() => completeTask(id)}
         />
       </div>
       <div className="todo__text">{text}</div>

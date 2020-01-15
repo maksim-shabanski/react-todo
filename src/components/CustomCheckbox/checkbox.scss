@@ -1,0 +1,33 @@
+.checkbox {
+	$block: &;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+
+	&__input {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 18px;
+		height: 18px;
+		border: 1px solid var(--gray-color);
+		border-radius: var(--border-radius-base);
+		background-color: var(--white-color);
+		transition: .3s cubic-bezier(.25, .8, .5, 1);
+
+		#{$block}--selected & {
+			border-color: var(--green-color);
+			background-color: var(--green-color);
+		}
+	}
+
+	&__icon {
+		width: 10px;
+		height: 10px;
+		fill: var(--white-color);
+	}
+}
