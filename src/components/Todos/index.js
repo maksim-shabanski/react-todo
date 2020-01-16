@@ -10,6 +10,7 @@ const Todos = ({
   addTaskToStore,
   removeTaskFromStore,
   completeTask,
+  updateTaskText,
 }) => {
   const isTodosExist = todos && todos.length > 0;
 
@@ -28,6 +29,7 @@ const Todos = ({
               isCompleted={isCompleted}
               completeTask={completeTask}
               onRemoveTask={removeTaskFromStore}
+              updateTaskText={updateTaskText}
             />
           ))}
         </div>
@@ -47,6 +49,7 @@ Todos.propTypes = {
   addTaskToStore: PropTypes.func.isRequired,
   completeTask: PropTypes.func.isRequired,
   removeTaskFromStore: PropTypes.func.isRequired,
+  updateTaskText: PropTypes.func.isRequired,
 };
 
 export default Todos;

@@ -1,4 +1,9 @@
-import { ADD_TASK, REMOVE_TASK, COMPLETE_TASK } from 'constants/actionType';
+import {
+  ADD_TASK,
+  REMOVE_TASK,
+  COMPLETE_TASK,
+  UPDATE_TASK_TEXT,
+} from 'constants/actionType';
 
 const todos = (state = [], { type, id, text, isCompleted }) => {
   switch (type) {
@@ -10,6 +15,13 @@ const todos = (state = [], { type, id, text, isCompleted }) => {
       return [...state].map(task => {
         if (task.id === id) {
           task.isCompleted = !task.isCompleted;
+        }
+        return task;
+      });
+    case UPDATE_TASK_TEXT:
+      return [...state].map(task => {
+        if (task.id === id) {
+          task.text = text;
         }
         return task;
       });

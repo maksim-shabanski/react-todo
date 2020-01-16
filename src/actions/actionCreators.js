@@ -3,6 +3,7 @@ import {
   ADD_TASK,
   REMOVE_TASK,
   COMPLETE_TASK,
+  UPDATE_TASK_TEXT,
 } from 'constants/actionType';
 
 export const initializeApp = () => ({
@@ -24,4 +25,10 @@ export const removeTask = id => ({
 export const completeTask = id => ({
   type: COMPLETE_TASK,
   id,
+});
+
+export const updateTaskText = (id, text) => ({
+  type: UPDATE_TASK_TEXT,
+  id,
+  text,
 });

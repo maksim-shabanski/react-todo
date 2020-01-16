@@ -14,8 +14,20 @@
 
 	&__text {
 		flex-grow: 1;
-		padding: 0 5px;
+		padding: 5px 10px;
+		outline: 0;
+		border: 1px solid transparent;
+		border-radius: var(--border-radius-base);
 		font-size: 14px;
+
+		&:hover {
+			background-color: var(--blue-color-alpha20);
+		}
+
+		&:focus {
+			border-color: var(--blue-color);
+			background-color: var(--blue-color-alpha20);
+		}
 
 		#{$block}--completed & {
 			color: var(--gray-color);
