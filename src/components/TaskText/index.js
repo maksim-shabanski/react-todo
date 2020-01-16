@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TaskText = ({ id, text, updateTaskText }) => {
+const TaskText = ({ id, text, updateTaskText, isCompleted }) => {
+  const canEditTaskText = !isCompleted;
+
   const handleFocusLost = ({ target }) => {
     const updatedText = target.innerText.trim();
 
@@ -25,7 +27,7 @@ const TaskText = ({ id, text, updateTaskText }) => {
       tabIndex="0"
       onBlur={handleFocusLost}
       onKeyPress={handleKeyPress}
-      contentEditable
+      contentEditable={canEditTaskText}
       suppressContentEditableWarning
     >
       {text}
@@ -37,6 +39,7 @@ TaskText.propTypes = {
   id: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
   updateTaskText: PropTypes.func.isRequired,
+  isCompleted: PropTypes.bool.isRequired,
 };
 
 export default TaskText;
