@@ -5,7 +5,7 @@ import {
   UPDATE_TASK_TEXT,
 } from 'constants/actionType';
 
-const todos = (state = [], { type, id, text, isCompleted }) => {
+const tasks = (state = [], { type, id, text, isCompleted }) => {
   switch (type) {
     case ADD_TASK:
       return [...state, { id, text, isCompleted }];
@@ -30,4 +30,4 @@ const todos = (state = [], { type, id, text, isCompleted }) => {
   }
 };
 
-export default todos;
+export default tasks;

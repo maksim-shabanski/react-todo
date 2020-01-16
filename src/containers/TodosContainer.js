@@ -11,14 +11,13 @@ import Todos from 'components/Todos';
 
 const TodoContainer = props => <Todos {...props} />;
 
-const mapStateToProps = ({ todos }) => ({
-  todos,
+const mapStateToProps = ({ tasks }) => ({
+  tasks,
 });
 
 const mapDispatchToProps = dispatch => ({
-  addTaskToStore: (id, text, isCompleted) =>
-    dispatch(addTask(id, text, isCompleted)),
-  removeTaskFromStore: id => dispatch(removeTask(id)),
+  addTask: (id, text, isCompleted) => dispatch(addTask(id, text, isCompleted)),
+  removeTask: id => dispatch(removeTask(id)),
   completeTask: id => dispatch(completeTask(id)),
   updateTaskText: (id, text) => dispatch(updateTaskText(id, text)),
 });

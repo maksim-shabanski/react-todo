@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TodoText = ({ id, text, updateTaskText }) => {
+const TaskText = ({ id, text, updateTaskText }) => {
   const handleFocusLost = ({ target }) => {
     const updatedText = target.innerText.trim();
 
@@ -20,7 +20,7 @@ const TodoText = ({ id, text, updateTaskText }) => {
 
   return (
     <div
-      className="todo__text"
+      className="task__text"
       role="textbox"
       tabIndex="0"
       onBlur={handleFocusLost}
@@ -33,10 +33,10 @@ const TodoText = ({ id, text, updateTaskText }) => {
   );
 };
 
-TodoText.propTypes = {
+TaskText.propTypes = {
   id: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
   updateTaskText: PropTypes.func.isRequired,
 };
 
-export default TodoText;
+export default TaskText;

@@ -2,33 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import TodoForm from 'components/TodoForm';
-import TodoItem from 'components/TodoItem';
+import Task from 'components/Task';
 import './todos.scss';
 
 const Todos = ({
-  todos,
-  addTaskToStore,
-  removeTaskFromStore,
+  tasks,
+  addTask,
+  removeTask,
   completeTask,
   updateTaskText,
 }) => {
-  const isTodosExist = todos && todos.length > 0;
+  const isTodosExist = tasks && tasks.length > 0;
 
   return (
     <div className="todos">
       <div className="todos__form">
-        <TodoForm addTaskToStore={addTaskToStore} />
+        <TodoForm addTask={addTask} />
       </div>
       {isTodosExist && (
         <div className="todos__list">
-          {todos.map(({ id, text, isCompleted }) => (
-            <TodoItem
+          {tasks.map(({ id, text, isCompleted }) => (
+            <Task
               key={id}
               id={id}
               text={text}
               isCompleted={isCompleted}
               completeTask={completeTask}
-              onRemoveTask={removeTaskFromStore}
+              removeTask={removeTask}
               updateTaskText={updateTaskText}
             />
           ))}
@@ -39,16 +39,16 @@ const Todos = ({
 };
 
 Todos.propTypes = {
-  todos: PropTypes.arrayOf(
+  tasks: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
       text: PropTypes.string,
       isCompleted: PropTypes.bool,
     })
   ).isRequired,
-  addTaskToStore: PropTypes.func.isRequired,
+  addTask: PropTypes.func.isRequired,
   completeTask: PropTypes.func.isRequired,
-  removeTaskFromStore: PropTypes.func.isRequired,
+  removeTask: PropTypes.func.isRequired,
   updateTaskText: PropTypes.func.isRequired,
 };
 

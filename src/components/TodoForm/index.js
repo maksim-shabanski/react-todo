@@ -3,40 +3,40 @@ import PropTypes from 'prop-types';
 
 import Button from 'components/Button';
 
-const TodoForm = ({ addTaskToStore }) => {
-  const [todoText, setTodoText] = useState('');
-  const todoInput = useRef();
+const TodoForm = ({ addTask }) => {
+  const [taskText, setTaskText] = useState('');
+  const input = useRef();
 
-  const addTodo = () => {
-    if (todoText !== '') {
+  const handleSubmitTask = () => {
+    if (taskText !== '') {
       const id = new Date().getTime();
-      addTaskToStore(id, todoText, false);
-      setTodoText('');
-      todoInput.current.focus();
+      addTask(id, taskText, false);
+      setTaskText('');
+      input.current.focus();
     }
   };
 
   const handleChangeInput = e => {
-    setTodoText(e.target.value);
+    setTaskText(e.target.value);
   };
 
   const handleKeyPress = ({ key }) => {
     if (key === 'Enter') {
-      addTodo();
+      handleSubmitTask();
     }
   };
 
   return (
     <>
       <input
-        ref={todoInput}
+        ref={input}
         type="text"
-        value={todoText}
-        placeholder="Task name..."
+        value={taskText}
+        placeholder="What are you need to do?"
         onChange={handleChangeInput}
         onKeyPress={handleKeyPress}
       />
-      <Button onClick={addTodo} variant="primary-outline">
+      <Button onClick={handleSubmitTask} variant="primary-outline">
         Add task
       </Button>
     </>
@@ -44,7 +44,7 @@ const TodoForm = ({ addTaskToStore }) => {
 };
 
 TodoForm.propTypes = {
-  addTaskToStore: PropTypes.func.isRequired,
+  addTask: PropTypes.func.isRequired,
 };
 
 export default TodoForm;
