@@ -4,6 +4,7 @@ import {
   REMOVE_TASK,
   COMPLETE_TASK,
   UPDATE_TASK_TEXT,
+  MOVE_TASK,
 } from 'constants/actionType';
 
 export const initializeApp = () => ({
@@ -31,4 +32,10 @@ export const updateTaskText = (id, text) => ({
   type: UPDATE_TASK_TEXT,
   id,
   text,
+});
+
+export const moveTask = (fromIndex, toIndex) => ({
+  type: MOVE_TASK,
+  fromIndex,
+  toIndex,
 });

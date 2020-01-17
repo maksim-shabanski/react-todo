@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const TaskText = ({ id, text, updateTaskText, isCompleted }) => {
   const canEditTaskText = !isCompleted;
 
-  const handleFocusLost = ({ target }) => {
+  const handleLostFocus = ({ target }) => {
     const updatedText = target.innerText.trim();
 
     if (updatedText && updatedText !== text) {
@@ -25,7 +25,7 @@ const TaskText = ({ id, text, updateTaskText, isCompleted }) => {
       className="task__text"
       role="textbox"
       tabIndex="0"
-      onBlur={handleFocusLost}
+      onBlur={handleLostFocus}
       onKeyPress={handleKeyPress}
       contentEditable={canEditTaskText}
       suppressContentEditableWarning
@@ -38,8 +38,8 @@ const TaskText = ({ id, text, updateTaskText, isCompleted }) => {
 TaskText.propTypes = {
   id: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
-  updateTaskText: PropTypes.func.isRequired,
   isCompleted: PropTypes.bool.isRequired,
+  updateTaskText: PropTypes.func.isRequired,
 };
 
 export default TaskText;

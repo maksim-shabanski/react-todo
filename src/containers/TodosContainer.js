@@ -6,6 +6,7 @@ import {
   removeTask,
   completeTask,
   updateTaskText,
+  moveTask,
 } from 'actions/actionCreators';
 import Todos from 'components/Todos';
 
@@ -20,6 +21,7 @@ const mapDispatchToProps = dispatch => ({
   removeTask: id => dispatch(removeTask(id)),
   completeTask: id => dispatch(completeTask(id)),
   updateTaskText: (id, text) => dispatch(updateTaskText(id, text)),
+  moveTask: (fromIndex, toIndex) => dispatch(moveTask(fromIndex, toIndex)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoContainer);
