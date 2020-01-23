@@ -2,14 +2,17 @@
   "env": {
     "es6": true,
     "browser": true,
-    "node": true
+    "node": true,
+    "jest/globals": true
   },
   "extends": [
     "airbnb",
     "airbnb/hooks",
     "prettier",
     "prettier/babel",
-    "prettier/react"
+    "prettier/react",
+    "plugin:jest/recommended",
+    "plugin:jest/style"
   ],
   "plugins": [
     "babel",
@@ -17,7 +20,8 @@
     "jsx-a11y",
     "react",
     "react-hooks",
-    "prettier"
+    "prettier",
+    "jest"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
