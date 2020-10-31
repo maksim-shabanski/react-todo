@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { CheckIcon } from '@modulz/radix-icons';
 
 import './checkbox.scss';
 
@@ -22,9 +23,7 @@ const CustomCheckbox = ({ className, isChecked, onClick }) => {
       onKeyPress={onClick}
     >
       <div className={`${prefix}__input`}>
-        <svg className={`${prefix}__icon`} viewBox="0 0 20 20">
-          <polygon points="0 11 2 9 7 14 18 3 20 5 7 18" />
-        </svg>
+        <CheckIcon width="16" height="16" color="#fff" />
       </div>
     </div>
   );
