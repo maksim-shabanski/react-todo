@@ -59,9 +59,9 @@
     "@modulz/radix-icons": "^3.2.0",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
-    "react": "^17.0.1",
+    "react": "^16.14.0",
     "react-beautiful-dnd": "^13.0.0",
-    "react-dom": "^17.0.1",
+    "react-dom": "^16.14.0",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5"
   },
