@@ -1,42 +1,35 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import Button from '../index';
+import { mount } from 'enzyme';
+import Button, { prefix } from '../Button';
+
+const mountComponent = (props) => mount(<Button {...props} />);
+const findButton = (wrapper) => wrapper.find('button');
 
 describe('Button component', () => {
-  it('Should output a button', () => {
-    expect(shallow(<Button>Button</Button>).find('button')).toHaveLength(1);
+  test('Passes different props which affect the class', () => {
+    const props = {
+      size: 'small',
+      variant: 'primary',
+      className: 'mock-class',
+    };
+    const wrapper = mountComponent(props);
+    const button = findButton(wrapper);
+    Object.entries(props).forEach(([key, value]) => {
+      const searchedClass = key === 'className' ? value : `${prefix}--${value}`;
+      expect(button.hasClass(searchedClass)).toBeTruthy();
+    });
   });
 
-  it('Should have block class', () => {
-    expect(
-      shallow(<Button>Button</Button>)
-        .find('button')
-        .hasClass('btn')
-    ).toBe(true);
-  });
+  describe('Type prop', () => {
+    test('By default', () => {
+      const wrapper = mountComponent();
+      expect(findButton(wrapper).prop('type')).toBe('button');
+    });
 
-  it('Should apply size class', () => {
-    expect(
-      shallow(<Button size="small">Button</Button>)
-        .find('button')
-        .hasClass('btn--small')
-    ).toBe(true);
-  });
-
-  it('Should apply variant class', () => {
-    expect(
-      shallow(<Button variant="primary">Button</Button>)
-        .find('button')
-        .hasClass('btn--primary')
-    ).toBe(true);
-  });
-
-  it('Should call onClick callback', () => {
-    const mockHandleClick = jest.fn();
-    const wrapper = shallow(
-      <Button onClick={() => mockHandleClick()}>Button</Button>
-    );
-    wrapper.find('button').simulate('click');
-    expect(mockHandleClick.mock.calls).toHaveLength(1);
+    test('Explicitly passes prop', () => {
+      const type = 'submit';
+      const wrapper = mountComponent({ type });
+      expect(findButton(wrapper).prop('type')).toBe(type);
+    });
   });
 });
