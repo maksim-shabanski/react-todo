@@ -1,5 +1,5 @@
 {
-  "extends": ["stylelint-config-hudochenkov"],
+  "extends": ["stylelint-config-hudochenkov/full"],
   "rules": {
     "order/order": [
       "custom-properties",
